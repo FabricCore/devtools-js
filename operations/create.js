@@ -39,6 +39,11 @@ function createSync(name, log) {
 
     fs.writeFileSync(
         `modules/${name}/index.js`,
+        `function packageName() {\n  return "my-package!";\n}\n\nmodule.exports = {\n  packageName,\n};`,
+    );
+
+    fs.writeFileSync(
+        `modules/${name}/init.js`,
         'console.log("Hello JSCore!");\nconsole.log("Learn how to write a module on https://jscore.siri.ws/dev/");',
     );
 
@@ -46,10 +51,10 @@ function createSync(name, log) {
 }
 
 function create(name, log) {
-    return Promise(() => createSync(name, log))
+    return Promise(() => createSync(name, log));
 }
 
 module.exports = {
     createSync,
-    create
+    create,
 };
