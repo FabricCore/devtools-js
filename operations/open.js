@@ -10,6 +10,7 @@ function openOne(name) {
 
     if (fs.existsSync(`opened/${name}`)) {
         console.error(`A folder already exists at opened/${name}`);
+        return;
     }
 
     fs.mkdirSync("opened");
@@ -26,6 +27,7 @@ function open(names) {
 function closeOne(name) {
     if (!fs.existsSync(`opened/${name}`)) {
         console.error(`No folder at opened/${name}`);
+        return;
     }
 
     fs.unlinkSync(`opened/${name}`, false);
