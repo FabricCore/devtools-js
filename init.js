@@ -11,7 +11,7 @@ command.register({
         new: {
             args: {
                 name: {
-                    type: StringArgumentType.word(),
+                    type: "word",
                     execute: devtoolsCommands._new,
                 },
             },
@@ -20,15 +20,17 @@ command.register({
             args: {
                 at: {
                     suggests: devtoolsCommands.getLocalPackageList,
-                    type: StringArgumentType.word(),
+                    type: "word",
                     args: {
                         expression: {
-                            type: StringArgumentType.greedyString(),
+                            type: "greedy",
                             execute: devtoolsCommands._eval,
                         },
                     },
                 },
             },
         },
+        open: devtoolsCommands.buildOpenCommand(),
+        close: devtoolsCommands.buildCloseCommand(),
     },
 });

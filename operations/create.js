@@ -20,6 +20,7 @@ let template = {
 };
 
 let fs = require("fs");
+let { open } = module.require("./open");
 
 function createSync(name, log) {
     if (fs.existsSync(`modules/${name}`)) {
@@ -48,6 +49,8 @@ function createSync(name, log) {
     );
 
     if (log) console.info(`Package created at modules/${name}.`);
+
+    open([name]);
 }
 
 function create(name, log) {

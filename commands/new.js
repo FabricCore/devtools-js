@@ -1,9 +1,6 @@
-let { create } = module.require("../operations")
-let { StringArgumentType } = com.mojang.brigadier.arguments;
+let { create } = module.require("../operations");
 
-function _new(ctx) {
-    let name = StringArgumentType.getString(ctx, "name");
-
+function _new(name) {
     create(name, true).catch((e) =>
         console.error(
             `Something went wrong when creating package.\nCause: ${e}`,
@@ -14,5 +11,5 @@ function _new(ctx) {
 }
 
 module.exports = {
-    _new
-}
+    _new,
+};
