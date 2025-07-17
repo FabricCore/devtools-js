@@ -13,7 +13,7 @@ function openOne(name) {
     }
 
     fs.mkdirSync("opened");
-    fs.symlinkSync(`opened/${name}`, `modules/${name}`);
+    fs.symlinkSync(`modules/${name}`, `opened/${name}`);
     console.info(`Opened package at opened/${name}`);
 }
 
