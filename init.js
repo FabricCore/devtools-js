@@ -7,6 +7,10 @@ let isSupportedSystem = !Util.getOperatingSystem().equals(
     Util.OperatingSystem.WINDOWS,
 );
 
+module.globals.devtools = {
+    supportSymlink: isSupportedSystem,
+};
+
 let subcommands = {
     new: {
         args: {

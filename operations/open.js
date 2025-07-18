@@ -17,6 +17,7 @@ function openOne(name) {
 }
 
 function open(names) {
+    if (!module.globals.devtools.supportSymlink) return;
     for (let name of Array.from(new Set(names))) {
         openOne(name);
     }

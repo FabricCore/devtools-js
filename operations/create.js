@@ -50,7 +50,7 @@ function createSync(name, log) {
 
     if (log) console.info(`Package created at modules/${name}.`);
 
-    open([name]);
+    open([name], false);
 }
 
 function create(name, log) {
