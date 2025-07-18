@@ -5,7 +5,9 @@ function getLocalPackageList() {
 }
 
 function getOpenablePackages() {
-    let opened = new Set(fs.readdirSync("opened"));
+    let opened = new Set(
+        fs.existsSync("opened") ? fs.readdirSync("opened") : [],
+    );
     return fs.readdirSync("modules").filter((name) => !opened.has(name));
 }
 
