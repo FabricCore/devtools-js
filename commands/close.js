@@ -34,3 +34,8 @@ function buildCloseCommand(currentDepth = 1) {
 }
 
 module.exports = { buildCloseCommand };
+module.exports.closeAll = {
+    execute: () => {
+        devtools.close(getCloseablePackages());
+    },
+};

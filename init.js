@@ -32,5 +32,6 @@ command.register({
         },
         open: devtoolsCommands.buildOpenCommand(),
         close: devtoolsCommands.buildCloseCommand(),
+        "close-all": devtoolsCommands.closeAll,
     },
 });
