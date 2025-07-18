@@ -1,5 +1,3 @@
-let { Files, Path } = java.nio.file;
-
 let fs = require("fs");
 
 function openOne(name) {
@@ -22,6 +20,7 @@ function open(names) {
     for (let name of Array.from(new Set(names))) {
         openOne(name);
     }
+    console.info(`Opened ${names.length} packages.`);
 }
 
 function closeOne(name) {
@@ -38,6 +37,7 @@ function close(names) {
     for (let name of Array.from(new Set(names))) {
         closeOne(name);
     }
+    console.info(`Closed ${names.length} packages.`);
 }
 
 module.exports = { open, close };

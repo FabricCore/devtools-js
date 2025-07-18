@@ -1,10 +1,9 @@
 let fs = require("fs");
-let Runtime = Packages.ws.siri.jscore.runtime.Runtime;
+let { Runtime } = Packages.ws.siri.jscore.runtime;
 
-let net = Packages.ws.siri.jscore.mapping.JSPackage.getRoot().net;
-let MinecraftClient = net.minecraft.client.MinecraftClient;
-let Text = net.minecraft.text.Text;
-let Formatting = net.minecraft.util.Formatting;
+let { MinecraftClient } = Yarn.net.minecraft.client;
+let { Text } = Yarn.net.minecraft.text;
+let { Formatting } = Yarn.net.minecraft.util;
 
 function evalSync(content, at, print) {
     if (!fs.existsSync(`modules/${at}`)) {

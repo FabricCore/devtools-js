@@ -1,6 +1,6 @@
 {
     "name": "devtools",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "description": "Developer's best friend.",
 
     "keywords": [],
@@ -14,9 +14,10 @@
         "type": "git",
         "url": "https://github.com/fabriccore/devtools-js"
     },
-    
+
     "dependencies": {
         "rinode": "0.1.0",
-        "command": "0.1.0"
+        "command": "0.1.0",
+        "yarn-extra": "0.1.0"
     }
 }
